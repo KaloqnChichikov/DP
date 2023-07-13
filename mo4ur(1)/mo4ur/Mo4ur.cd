@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="mo4ur.Class.Mo4ur">
+    <Position X="24.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAkAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Class\Mo4ur.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mo4ur.Class.Salati">
+    <Position X="16.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Class\Salati.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mo4ur.Class.Hlqb">
+    <Position X="25.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Class\Hlqb.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mo4ur.Class.Sos">
+    <Position X="34.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Class\Sos.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mo4ur.Class.Desert">
+    <Position X="9.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Class\Desert.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mo4ur.Class.Nap">
+    <Position X="18.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Class\Nap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mo4ur.Class.Garni">
+    <Position X="27.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Class\Garni.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mo4ur.Class.SP">
+    <Position X="36.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Class\SP.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mo4ur.Class.TP">
+    <Position X="12" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Class\TP.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mo4ur.Class.BuGi">
+    <Position X="21" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Class\BuGi.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mo4ur.Class.Riba">
+    <Position X="30" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Class\Riba.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mo4ur.Class.Osn">
+    <Position X="39" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Class\Osn.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mo4ur.Class.Pasta">
+    <Position X="14.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Class\Pasta.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mo4ur.Class.Pizza">
+    <Position X="23.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Class\Pizza.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mo4ur.Class.Skara">
+    <Position X="32.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Class\Skara.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

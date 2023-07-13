@@ -1,0 +1,32 @@
+C:\Users\User\OneDrive\Документи\Visual Studio 2022\Zadachi\mo4ur\obj\Debug\net5.0\mo4ur.csproj.AssemblyReference.cache
+C:\Users\User\OneDrive\Документи\Visual Studio 2022\Zadachi\mo4ur\obj\Debug\net5.0\mo4ur.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\OneDrive\Документи\Visual Studio 2022\Zadachi\mo4ur\obj\Debug\net5.0\mo4ur.AssemblyInfoInputs.cache
+C:\Users\User\OneDrive\Документи\Visual Studio 2022\Zadachi\mo4ur\obj\Debug\net5.0\mo4ur.AssemblyInfo.cs
+C:\Users\User\OneDrive\Документи\Visual Studio 2022\Zadachi\mo4ur\obj\Debug\net5.0\mo4ur.csproj.CoreCompileInputs.cache
+C:\Users\User\OneDrive\Документи\Visual Studio 2022\Zadachi\mo4ur\bin\Debug\net5.0\mo4ur.exe
+C:\Users\User\OneDrive\Документи\Visual Studio 2022\Zadachi\mo4ur\bin\Debug\net5.0\mo4ur.deps.json
+C:\Users\User\OneDrive\Документи\Visual Studio 2022\Zadachi\mo4ur\bin\Debug\net5.0\mo4ur.runtimeconfig.json
+C:\Users\User\OneDrive\Документи\Visual Studio 2022\Zadachi\mo4ur\bin\Debug\net5.0\mo4ur.runtimeconfig.dev.json
+C:\Users\User\OneDrive\Документи\Visual Studio 2022\Zadachi\mo4ur\bin\Debug\net5.0\mo4ur.dll
+C:\Users\User\OneDrive\Документи\Visual Studio 2022\Zadachi\mo4ur\bin\Debug\net5.0\mo4ur.pdb
+C:\Users\User\OneDrive\Документи\Visual Studio 2022\Zadachi\mo4ur\obj\Debug\net5.0\mo4ur.dll
+C:\Users\User\OneDrive\Документи\Visual Studio 2022\Zadachi\mo4ur\obj\Debug\net5.0\refint\mo4ur.dll
+C:\Users\User\OneDrive\Документи\Visual Studio 2022\Zadachi\mo4ur\obj\Debug\net5.0\mo4ur.pdb
+C:\Users\User\OneDrive\Документи\Visual Studio 2022\Zadachi\mo4ur\obj\Debug\net5.0\mo4ur.genruntimeconfig.cache
+C:\Users\User\OneDrive\Документи\Visual Studio 2022\Zadachi\mo4ur\obj\Debug\net5.0\ref\mo4ur.dll
+C:\Users\Калоян Чичиков\Downloads\mo4ur\mo4ur\obj\Debug\net5.0\mo4ur.dll
+C:\Users\Калоян Чичиков\Downloads\mo4ur\mo4ur\obj\Debug\net5.0\ref\mo4ur.dll
+C:\Users\Калоян Чичиков\Downloads\mo4ur\mo4ur\obj\Debug\net5.0\mo4ur.pdb
+C:\Users\Калоян Чичиков\Downloads\mo4ur\mo4ur\bin\Debug\net5.0\mo4ur.exe
+C:\Users\Калоян Чичиков\Downloads\mo4ur\mo4ur\bin\Debug\net5.0\mo4ur.deps.json
+C:\Users\Калоян Чичиков\Downloads\mo4ur\mo4ur\bin\Debug\net5.0\mo4ur.runtimeconfig.json
+C:\Users\Калоян Чичиков\Downloads\mo4ur\mo4ur\bin\Debug\net5.0\mo4ur.runtimeconfig.dev.json
+C:\Users\Калоян Чичиков\Downloads\mo4ur\mo4ur\bin\Debug\net5.0\mo4ur.dll
+C:\Users\Калоян Чичиков\Downloads\mo4ur\mo4ur\bin\Debug\net5.0\ref\mo4ur.dll
+C:\Users\Калоян Чичиков\Downloads\mo4ur\mo4ur\bin\Debug\net5.0\mo4ur.pdb
+C:\Users\Калоян Чичиков\Downloads\mo4ur\mo4ur\obj\Debug\net5.0\mo4ur.csproj.AssemblyReference.cache
+C:\Users\Калоян Чичиков\Downloads\mo4ur\mo4ur\obj\Debug\net5.0\mo4ur.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Калоян Чичиков\Downloads\mo4ur\mo4ur\obj\Debug\net5.0\mo4ur.AssemblyInfoInputs.cache
+C:\Users\Калоян Чичиков\Downloads\mo4ur\mo4ur\obj\Debug\net5.0\mo4ur.AssemblyInfo.cs
+C:\Users\Калоян Чичиков\Downloads\mo4ur\mo4ur\obj\Debug\net5.0\mo4ur.csproj.CoreCompileInputs.cache
+C:\Users\Калоян Чичиков\Downloads\mo4ur\mo4ur\obj\Debug\net5.0\mo4ur.genruntimeconfig.cache
