@@ -27,33 +27,19 @@ namespace mo4ur
             Console.WriteLine("|12|Сосове               |");
             Console.WriteLine("|13|Десерти              |");
             Console.WriteLine("|14|Напитки              |");
-            Console.WriteLine("|15|Изход                |");
+            Console.WriteLine("|15|Сметката             |");
             Console.WriteLine("--------------------------");
             Console.WriteLine("За да си изберете, Вие цифра натиснете!");
         }
-
-        //public static bool checkInput(string text, string pattern)
-        //{
-        //    if (Regex.IsMatch(text, pattern))
-        //    {
-        //        string[] nos = text.Split(' ', StringSplitOptions.RemoveEmptyEntries);
-        //        Console.WriteLine("Валидно число: " + text);
-        //        return true;
-        //    }
-        //    else
-        //    {
-        //        Console.WriteLine(text + " има грешка.");
-        //        Console.Write("Опитай пак: ");
-        //        return false;
-
-        //    }
-        //}
-
-        public static Mo4ur Choice(string izbor)
+        public static List<Mo4ur> Choice()
         {
+            List<Mo4ur> slavi = new List<Mo4ur>();
             while (true)
             {
-                izbor = Console.ReadLine();
+                Console.Clear();
+                Menu();
+                Console.Write("Направете своя избор: ");
+                string izbor = Console.ReadLine();
                 string path = "" ;
                 if (izbor == "1") path = "Салати.txt";
                 else if (izbor == "2") path = "Студени предястия.txt";
@@ -68,9 +54,19 @@ namespace mo4ur
                 else if (izbor == "11") path = "Хляб.txt";
                 else if (izbor == "12") path = "Сосове.txt";
                 else if (izbor == "13") path = "Десерти.txt";
+                
                 else if (izbor == "14") path = "Напитки.txt";
-                else if (izbor == "15") path = "Изход.txt";
-                else continue;
+                else if (izbor == "15") 
+                {
+                    goto End;
+                }
+
+                else
+                {
+                    Console.Clear();
+                    continue;
+                }
+                Console.Clear();
                 StreamReader stream = new StreamReader(path);
                 List<string> list = new List<string>();
                 string line = stream.ReadLine();
@@ -84,457 +80,129 @@ namespace mo4ur
                 {
                     Console.WriteLine(list[i]);
                 }
+                string temp = null;
                 while (true)
                 {
+                    Console.WriteLine("За да си изберете, Вие цифра натиснете!");
+                    Console.Write("Направете своя избор: ");
                     string izbor2 = Console.ReadLine();
                     try
                     {
-                        string temp = list[int.Parse(izbor2)];
-                        using (StreamWriter writer = new StreamWriter("Изход.txt"))
-                        {
-                            writer.WriteLine("Hello, World!");
-                        }
-                        break;
+                        temp = list[int.Parse(izbor2)+2];
+                        if (temp.Contains(" ")) break;
+                        Console.WriteLine("Въведете валиден избор!");
+                        continue;
                     }
                     catch (Exception e)
                     {
-                        Console.WriteLine(e.Message);
+                        Console.WriteLine("Въведете валиден избор!");
+                        continue;
                     }
                 }
+                string[] split = temp.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+                slavi.Add(new Mo4ur(split[1], decimal.Parse(split[2]), int.Parse(split[4])));
             }
+        End:
+            return slavi;
         }
-        //public static Mo4ur JohnCena(int johnCena)
-        //{
-        //    StreamReader streamReader;
-        //    string[] strings = { "Салати", "Студени предястия", "Топли предястия", "Бургери и Сандвичи", "Риба и Морски Дарове",
-        //        "Основни ястия", "Паста", "Пици", "Скара", "Гарнитури", "Хляб", "Сосове", "Десерти", "Напитки" , "Изход"};
-        //    streamReader = new StreamReader($"{strings[johnCena - 1]}.txt");
-        //    Console.WriteLine(streamReader.ReadToEnd());
-        //    streamReader.Close();
-        //    streamReader = new StreamReader($"{strings[johnCena - 1]}.txt");
-        //    string izbor = Console.ReadLine();
-            //while (true)
-            //{
-
-            //    if (Regex.IsMatch(izbor, @"(\A[1-9]\z)|(\A[1][0-9]\z)|(\A[2][0-9]\z)|(\A[3][0-1]\z)"))
-            //    {
-            //        Console.WriteLine("Валидно число: " + izbor);
-            //        break;
-            //    }
-            //    else
-            //    {
-            //        Console.WriteLine(izbor + " има грешка.");
-            //        Console.Write("Опитай пак: ");
-            //        izbor = Console.ReadLine();
-
-            //    }
-        //    }
-        //    int br = -2;
-        //    Mo4ur goshko = null;
-        //    while (true)
-        //    {
-        //        try
-        //        {
-        //            streamReader = new StreamReader($"{strings[johnCena - 1]}.txt");
-        //            string zapis = streamReader.ReadLine();
-
-        //            Console.WriteLine(zapis);
-
-        //            if (br == int.Parse(izbor))
-        //            {
-
-        //                if (johnCena == 1)
-        //                {
-        //                    while (true)
-        //                    {
-        //                        //string regex = @"(\A[1-9]\z)|(\A[1][0-9]\z)|(\A[2][0-9]\z)|(\A[3][0-1]\z)";
-        //                        if (Regex.IsMatch(izbor, @"(\A[1-9]\z)|(\A[1][0-9]\z)|(\A[2][0-9]\z)|(\A[3][0-1]\z)"))
-        //                        {
-        //                            string[] nos = zapis.Split(' ', StringSplitOptions.RemoveEmptyEntries);
-        //                            Console.WriteLine("Валидно число: " + izbor);
-        //                            goshko = new Salati(nos[1], decimal.Parse(nos[2]), int.Parse(nos[4]));
-        //                            break;
-        //                        }
-        //                        else
-        //                        {
-        //                            Console.WriteLine(izbor + " има грешка.");
-        //                            Console.Write("Опитай пак: ");
-        //                            izbor = Console.ReadLine();
-
-        //                        }
-        //                    }
-
-        //                }
-
-        //                else if (johnCena == 2)
-        //                {
-        //                    while (true)
-        //                    {
-
-        //                        if (Regex.IsMatch(izbor, @"(\A[1-8]\z)"))
-        //                        {
-        //                            string[] nos = zapis.Split(' ', StringSplitOptions.RemoveEmptyEntries);
-        //                            Console.WriteLine("Валидно число: " + izbor);
-        //                            goshko = new SP(nos[1], decimal.Parse(nos[2]), int.Parse(nos[4]));
-        //                            break;
-        //                        }
-        //                        else
-        //                        {
-        //                            Console.WriteLine(izbor + " има грешка.");
-        //                            Console.Write("Опитай пак: ");
-        //                            izbor = Console.ReadLine();
-
-        //                        }
-        //                    }
-
-        //                }
-        //                else if (johnCena == 3)
-        //                {
-        //                    while (true)
-        //                    {
-
-        //                        if (Regex.IsMatch(izbor, @"(\A[1-8]\z)"))
-        //                        {
-        //                            string[] nos = zapis.Split(' ', StringSplitOptions.RemoveEmptyEntries);
-        //                            Console.WriteLine("Валидно число: " + izbor);
-        //                            goshko = new TP(nos[1], decimal.Parse(nos[2]), int.Parse(nos[4]));
-        //                            break;
-        //                        }
-        //                        else
-        //                        {
-        //                            Console.WriteLine(izbor + " има грешка.");
-        //                            Console.Write("Опитай пак: ");
-        //                            izbor = Console.ReadLine();
-
-        //                        }
-        //                    }
-
-        //                }
-        //                else if (johnCena == 4)
-        //                {
-        //                    while (true)
-        //                    {
-
-        //                        if (Regex.IsMatch(izbor, @"(\A[1-9]\z)|(\A[1][0-1]\z)"))
-        //                        {
-        //                            string[] nos = zapis.Split(' ', StringSplitOptions.RemoveEmptyEntries);
-        //                            Console.WriteLine("Валидно число: " + izbor);
-        //                            goshko = new BuGi(nos[1], decimal.Parse(nos[2]), int.Parse(nos[4]));
-        //                            break;
-        //                        }
-        //                        else
-        //                        {
-        //                            Console.WriteLine(izbor + " има грешка.");
-        //                            Console.Write("Опитай пак: ");
-        //                            izbor = Console.ReadLine();
-
-        //                        }
-        //                    }
-
-        //                }
-        //                else if (johnCena == 5)
-        //                {
-        //                    while (true)
-        //                    {
-
-        //                        if (Regex.IsMatch(izbor, @"(\A[1-9]\z)|(\A[1][0-1]\z)"))
-        //                        {
-        //                            string[] nos = zapis.Split(' ', StringSplitOptions.RemoveEmptyEntries);
-        //                            Console.WriteLine("Валидно число: " + izbor);
-        //                            goshko = new Riba(nos[1], decimal.Parse(nos[2]), int.Parse(nos[4]));
-        //                            break;
-        //                        }
-        //                        else
-        //                        {
-        //                            Console.WriteLine(izbor + " има грешка.");
-        //                            Console.Write("Опитай пак: ");
-        //                            izbor = Console.ReadLine();
-
-        //                        }
-        //                    }
-
-        //                }
-        //                else if (johnCena == 6)
-        //                {
-        //                    while (true)
-        //                    {
-
-        //                        if (Regex.IsMatch(izbor, @"(\A[1-9]\z)|(\A[1][0-9]\z)|(\A[2][0-1]\z)"))
-        //                        {
-        //                            string[] nos = zapis.Split(' ', StringSplitOptions.RemoveEmptyEntries);
-        //                            Console.WriteLine("Валидно число: " + izbor);
-        //                            goshko = new Osn(nos[1], decimal.Parse(nos[2]), int.Parse(nos[4]));
-        //                            break;
-        //                        }
-        //                        else
-        //                        {
-        //                            Console.WriteLine(izbor + " има грешка.");
-        //                            Console.Write("Опитай пак: ");
-        //                            izbor = Console.ReadLine();
-
-        //                        }
-        //                    }
-
-        //                }
-        //                else if (johnCena == 7)
-        //                {
-        //                    while (true)
-        //                    {
-
-        //                        if (Regex.IsMatch(izbor, @"(\A[1-9]\z)|(\A[1][0-1]\z)"))
-        //                        {
-        //                            string[] nos = zapis.Split(' ', StringSplitOptions.RemoveEmptyEntries);
-        //                            Console.WriteLine("Валидно число: " + izbor);
-        //                            goshko = new Pasta(nos[1], decimal.Parse(nos[2]), int.Parse(nos[4]));
-        //                            break;
-        //                        }
-        //                        else
-        //                        {
-        //                            Console.WriteLine(izbor + " има грешка.");
-        //                            Console.Write("Опитай пак: ");
-        //                            izbor = Console.ReadLine();
-
-        //                        }
-        //                    }
-
-        //                }
-        //                else if (johnCena == 8)
-        //                {
-        //                    while (true)
-        //                    {
-
-        //                        if (Regex.IsMatch(izbor, @"(\A[1-9]\z)|(\A[1][0-9]\z)|(\A[3][0]\z)"))
-        //                        {
-        //                            string[] nos = zapis.Split(' ', StringSplitOptions.RemoveEmptyEntries);
-        //                            Console.WriteLine("Валидно число: " + izbor);
-        //                            goshko = new Pizza(nos[1], decimal.Parse(nos[2]), int.Parse(nos[4]));
-        //                            break;
-        //                        }
-        //                        else
-        //                        {
-        //                            Console.WriteLine(izbor + " има грешка.");
-        //                            Console.Write("Опитай пак: ");
-        //                            izbor = Console.ReadLine();
-
-        //                        }
-        //                    }
-
-        //                }
-        //                else if (johnCena == 9)
-        //                {
-        //                    while (true)
-        //                    {
-
-        //                        if (Regex.IsMatch(izbor, @"(\A[1-7]\z)"))
-        //                        {
-        //                            string[] nos = zapis.Split(' ', StringSplitOptions.RemoveEmptyEntries);
-        //                            Console.WriteLine("Валидно число: " + izbor);
-        //                            goshko = new Skara(nos[1], decimal.Parse(nos[2]), int.Parse(nos[4]));
-        //                            break;
-        //                        }
-        //                        else
-        //                        {
-        //                            Console.WriteLine(izbor + " има грешка.");
-        //                            Console.Write("Опитай пак: ");
-        //                            izbor = Console.ReadLine();
-
-        //                        }
-        //                    }
-
-        //                }
-        //                else if (johnCena == 10)
-        //                {
-        //                    while (true)
-        //                    {
-
-        //                        if (Regex.IsMatch(izbor, @"(\A[1-9]\z)|(\A[1][0-3]\z)"))
-        //                        {
-        //                            string[] nos = zapis.Split(' ', StringSplitOptions.RemoveEmptyEntries);
-        //                            Console.WriteLine("Валидно число: " + izbor);
-        //                            goshko = new Garni(nos[1], decimal.Parse(nos[2]), int.Parse(nos[4]));
-        //                            break;
-        //                        }
-        //                        else
-        //                        {
-        //                            Console.WriteLine(izbor + " има грешка.");
-        //                            Console.Write("Опитай пак: ");
-        //                            izbor = Console.ReadLine();
-
-        //                        }
-        //                    }
-
-        //                }
-        //                else if (johnCena == 11)
-        //                {
-        //                    while (true)
-        //                    {
-
-        //                        if (Regex.IsMatch(izbor, @"(\A[1-6]\z)"))
-        //                        {
-        //                            string[] nos = zapis.Split(' ', StringSplitOptions.RemoveEmptyEntries);
-        //                            Console.WriteLine("Валидно число: " + izbor);
-        //                            goshko = new Hlqb(nos[1], decimal.Parse(nos[2]), int.Parse(nos[4]));
-        //                            break;
-        //                        }
-        //                        else
-        //                        {
-        //                            Console.WriteLine(izbor + " има грешка.");
-        //                            Console.Write("Опитай пак: ");
-        //                            izbor = Console.ReadLine();
-
-        //                        }
-        //                    }
-
-        //                }
-        //                else if (johnCena == 12)
-        //                {
-        //                    while (true)
-        //                    {
-
-        //                        if (Regex.IsMatch(izbor, @"(\A[1-9]\z)|(\A[1][0-4]\z)"))
-        //                        {
-        //                            string[] nos = zapis.Split(' ', StringSplitOptions.RemoveEmptyEntries);
-        //                            Console.WriteLine("Валидно число: " + izbor);
-        //                            goshko = new Sos(nos[1], decimal.Parse(nos[2]), int.Parse(nos[4]));
-        //                            break;
-        //                        }
-        //                        else
-        //                        {
-        //                            Console.WriteLine(izbor + " има грешка.");
-        //                            Console.Write("Опитай пак: ");
-        //                            izbor = Console.ReadLine();
-
-        //                        }
-        //                    }
-
-        //                }
-        //                else if (johnCena == 13)
-        //                {
-        //                    while (true)
-        //                    {
-
-        //                        if (Regex.IsMatch(izbor, @"(\A[1-9]\z)|(\A[1][0-7]\z)"))
-        //                        {
-        //                            string[] nos = zapis.Split(' ', StringSplitOptions.RemoveEmptyEntries);
-        //                            Console.WriteLine("Валидно число: " + izbor);
-        //                            goshko = new Desert(nos[1], decimal.Parse(nos[2]), int.Parse(nos[4]));
-        //                            break;
-        //                        }
-        //                        else
-        //                        {
-        //                            Console.WriteLine(izbor + " има грешка.");
-        //                            Console.Write("Опитай пак: ");
-        //                            izbor = Console.ReadLine();
-
-        //                        }
-        //                    }
-
-        //                }
-        //                else if (johnCena == 14)
-        //                {
-        //                    while (true)
-        //                    {
-
-        //                        if (Regex.IsMatch(izbor, @"(\A[1-9]\z)|(\A[1][0-9]\z)|(\A[2][0-2]\z)"))
-        //                        {
-        //                            string[] nos = zapis.Split(' ', StringSplitOptions.RemoveEmptyEntries);
-        //                            Console.WriteLine("Валидно число: " + izbor);
-        //                            goshko = new Nap(nos[1], decimal.Parse(nos[2]), int.Parse(nos[4]));
-        //                            break;
-        //                        }
-        //                        else
-        //                        {
-        //                            Console.WriteLine(izbor + " има грешка.");
-        //                            Console.Write("Опитай пак: ");
-        //                            izbor = Console.ReadLine();
-
-        //                        }
-        //                    }
-        //                }
-
-        //                break;
-        //            }
-        //            br++;
-        //            streamReader.Close();
-        //        }
-        //        catch (Exception e)
-        //        {
-        //            Console.WriteLine("Error happened");
-        //            Console.WriteLine(e.Message);
-        //        }
-                
-        //    }
-        //    streamReader.Close();
-        //    return goshko;
-        //}
+        
         static void Main(string[] args)
         {
             List<Mo4ur> list = new();
 
             Console.OutputEncoding = System.Text.Encoding.UTF8;
-            //Console.WriteLine("Добре дошли в ресторант \"Moчур\"!");
-            //Console.Write("Въведете име и фамилия, на които да се води резервацията (на английски): ");
-            //string ime = Console.ReadLine();
-            //bool isvalidname = false;
-            //while (!isvalidname)
-            //{
-            //    if (ime == "Slavi Temelkov")
-            //    {
-            //        Console.WriteLine("Съжеляваме, но нашият ресторант не предлага маса за повече от петима души.");
-            //        Console.Write("Опитай пак: ");
-            //        ime = Console.ReadLine();
-            //    }
-            //    if (Regex.IsMatch(ime, @"\A[A-Z][a-z]+ [A-Z][a-z]+\z"))
-            //    {
-            //        isvalidname = true;
-            //        Console.WriteLine("Валидно име: " + ime);
-            //    }
-            //    else
-            //    {
-            //        Console.WriteLine(ime + " има грешка.");
-            //        Console.Write("Опитай пак: ");
-            //        ime = Console.ReadLine();
+            Console.WriteLine("Добре дошли в ресторант \"Moчур\"!");
+            Console.Write("Въведете име и фамилия, на които да се води резервацията (на английски): ");
+            string ime = Console.ReadLine();
+            while (true)
+            {
+                while(ime=="Slavi Temelkov")
+                {
+                    Console.WriteLine("Съжеляваме, но нашият ресторант не предлага маса за повече от петима души.");
+                    Console.Clear();
+                    Console.WriteLine("Добре дошли в ресторант \"Moчур\"!");
+                    Console.Write("Въведете име и фамилия, на които да се води резервацията (на английски): ");
+                    ime = Console.ReadLine();
+                }
+                if (Regex.IsMatch(ime, @"\A[A-Z][a-z]+ [A-Z][a-z]+\z"))
+                {
+                    Console.WriteLine("Валидно име: " + ime);
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine(ime + " има грешка.");
+                    Console.Write("Опитай пак: ");
+                    ime = Console.ReadLine();
 
-            //    }
-            //}
-            //Console.Write("За колко човека искате да бъде резервацията (1-5): ");
-            //string ResNum = Console.ReadLine();
-            //while (true)
-            //{
+                }
+            }
+            Console.Write("За колко човека искате да бъде резервацията (1-5): ");
+            string ResNum = Console.ReadLine();
+            while (true)
+            {
 
-            //    if (Regex.IsMatch(ResNum, @"\A[1-5]\z"))
-            //    {
-            //        Console.WriteLine("Валидно число: " + ResNum);
-            //        break;
-            //    }
-            //    else
-            //    {
-            //        Console.WriteLine(ResNum + " има грешка.");
-            //        Console.Write("Опитай пак: ");
-            //        ResNum = Console.ReadLine();
+                if (Regex.IsMatch(ResNum, @"\A[1-5]\z"))
+                {
+                    Console.WriteLine("Валидно число: " + ResNum);
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine(ResNum + " има грешка.");
+                    Console.Write("Опитай пак: ");
+                    ResNum = Console.ReadLine();
 
-            //    }
-            //}
-            //if (ResNum == "1")
-            //{
-            //    Console.WriteLine($"Вашата резервация е на името на {ime} и ще е за един човек.");
-            //}
-            //else if (ResNum == "2")
-            //{
-            //    Console.WriteLine($"Вашата резервация е на името на {ime} и ще е за двама души.");
-            //}
-            //else if (ResNum == "3")
-            //{
-            //    Console.WriteLine($"Вашата резервация е на името на {ime} и ще е за трима души.");
-            //}
-            //else if (ResNum == "4")
-            //{
-            //    Console.WriteLine($"Вашата резервация е на името на {ime} и ще е за четирима души.");
-            //}
-            //else
-            //{
-            //    Console.WriteLine($"Вашата резервация е на името на {ime} и ще е за петима души.");
-            //}
+                }
+            }
+            Console.Write("За кога искате да запазите регистрацията: ");
+            Console.WriteLine("Можете да резервирате ден, който е рамките на следващият един месец.");
+            Console.Write("Въведете месец: ");
+            string mesec = Console.ReadLine();
+            Console.Write("Въведете ден: ");
+            string den = Console.ReadLine();
+            while (true)
+            {
+                if((mesec=="August" || mesec =="august"|| mesec == "AUGUST")&&(int.Parse(den)>=1|| int.Parse(den) <=15))
+                    {
+                    Console.WriteLine($"Валидна информация.");break;
+                }
+                else if ((mesec == "July" || mesec == "july" || mesec == "JULY") && (int.Parse(den) >= 15 || int.Parse(den) <= 31))
+                    {
+                    Console.WriteLine($"Валидна информация."); break;
+                }
+                
+                
+                else
+                {
+                    Console.WriteLine("Грешно въведена дата или месец.");
+                    Console.Write("Опитай пак: ");
+                    mesec = Console.ReadLine();
+                    den = Console.ReadLine();
+
+                }
+            }
+            Console.Clear();
+            if (ResNum == "1")
+            {
+                Console.WriteLine($"Вашата резервация е на името на {ime} и ще е за един човек.");
+            }
+            else if (ResNum == "2")
+            {
+                Console.WriteLine($"Вашата резервация е на името на {ime} и ще е за двама души.");
+            }
+            else if (ResNum == "3")
+            {
+                Console.WriteLine($"Вашата резервация е на името на {ime} и ще е за трима души.");
+            }
+            else if (ResNum == "4")
+            {
+                Console.WriteLine($"Вашата резервация е на името на {ime} и ще е за четирима души.");
+            }
+            else
+            {
+                Console.WriteLine($"Вашата резервация е на името на {ime} и ще е за петима души.");
+            }
             Console.Write("Искате ли да Ви покажем менюто си? Отговор (на английски): ");
             string VhMenu = Console.ReadLine();
             while (true)
@@ -544,37 +212,41 @@ namespace mo4ur
                 {
                     Console.WriteLine("Валиден отговор: " + VhMenu);
                     Console.Clear();
-                    Menu();
-                    string IChislo = Console.ReadLine();
+                    List<Mo4ur> slavi = Choice();
+                    Console.Clear();
+                    Console.WriteLine("НЕЩАТА, КОИТО СИ ИЗБРАХТЕ СА: ");
+                    decimal br = 0;
+                    foreach (Mo4ur slavche in slavi)
+                    {
+                        Console.WriteLine($"|{slavche}|");
+                        br += slavche.Price;
+                    }
+                    Console.WriteLine($"Общата Ви сума е: {br} лв.");
 
-                    Choice(IChislo);
-                    //while (true)
-                    //{
+                    string outputPath = "Изход.txt";
+                    using (StreamWriter writer = new StreamWriter(outputPath))
+                    {
+                        writer.WriteLine($"Резервация на: {ime}");
+                        writer.WriteLine($"Брой души: {ResNum}");
+                        writer.WriteLine($"Вашата резервация е за месец {mesec}, ден {den}.");
+                        writer.WriteLine();
+                        writer.WriteLine("НЕЩАТА, КОИТО СИ ИЗБРАХТЕ СА:");
+                        foreach (Mo4ur slavche in slavi)
+                        {
+                            writer.WriteLine($"|{slavche}|");
+                        }
+                        writer.WriteLine($"Общата Ви сума е: {br} лв.");
+                        writer.WriteLine("Вие бяхте обслужен/а от виртуален сервитьор Калоян Иванов.");
+                    }
 
-                    //    if (Regex.IsMatch(IChislo, @"(\A[1-9]\z)|(\A[1][0-5]\z)"))
-                    //    {
-                    //        Console.WriteLine("Валидно число: " + IChislo);
-                    //        Console.Clear();
-                    //        list.Add(JohnCena(int.Parse(IChislo)));
-                    //        if (IChislo == "15")
-                    //        {
-                    //            Console.WriteLine(list);
-                    //            break;
-                    //        }
-                    //        break;
-                    //    }
-                    //    else
-                    //    {
-                    //        Console.WriteLine(IChislo + " има грешка.");
-                    //        Console.Write("Опитай пак: ");
-                    //        IChislo = Console.ReadLine();
-
-                    //    }
-                    //}
+                    Console.WriteLine("Информацията е записана във файл " + outputPath);
+                    Console.WriteLine("Вие бяхте обслужен/а от виртуален сервитьор Калоян Иванов.");
+                    break;
                 }
                 else if (Regex.IsMatch(VhMenu, @"\A(no|nope|n|false|f|0|No|Nope|N|False|F|NO|NOPE|FALSE)\z"))
                 {
                     Console.WriteLine("Валиден отговор: " + VhMenu);
+                    Console.Clear();
                     Console.WriteLine("Довиждане,");
                     Console.WriteLine("Заповядайте отново!");
                     break;
